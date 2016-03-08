@@ -12,6 +12,9 @@ type RemoteDriver interface {
 	// exists.
 	UploadISO(string, string, string) (string, error)
 
+	// RemoveISO removes the ISO uploaded by UploadISO
+	RemoveISO(string) error
+
 	// Adds a VM to inventory specified by the path to the VMX given.
 	Register(string) error
 

@@ -137,6 +137,10 @@ func (d *ESX5Driver) UploadISO(localPath string, checksum string, checksumType s
 	return finalPath, nil
 }
 
+func (d *ESX5Driver) RemoveISO(isoPath string) error {
+	return d.sh("rm", "-f", isoPath)
+}
+
 func (d *ESX5Driver) ToolsIsoPath(string) string {
 	return ""
 }
